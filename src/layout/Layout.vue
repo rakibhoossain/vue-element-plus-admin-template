@@ -1,5 +1,6 @@
 <script lang="tsx">
-import { computed, defineComponent, unref } from 'vue'
+import { computed, defineComponent } from 'vue'
+//unref
 import { useAppStore } from '@/store/modules/app'
 import { Backtop } from '@/components/Backtop'
 import { Setting } from '@/components/Setting'
@@ -25,6 +26,9 @@ const handleClickOutside = () => {
 }
 
 const renderLayout = () => {
+  const { renderTopLeft } = useRenderLayout()
+  return renderTopLeft()
+  /*
   switch (unref(layout)) {
     case 'classic':
       const { renderClassic } = useRenderLayout()
@@ -41,6 +45,7 @@ const renderLayout = () => {
     default:
       break
   }
+  */
 }
 
 export default defineComponent({
@@ -54,11 +59,8 @@ export default defineComponent({
             onClick={handleClickOutside}
           ></div>
         ) : undefined}
-
         {renderLayout()}
-
         <Backtop></Backtop>
-
         <Setting></Setting>
       </section>
     )

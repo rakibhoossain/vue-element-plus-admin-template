@@ -11,7 +11,7 @@ const appStore = useAppStore()
 
 const show = ref(true)
 
-const title = computed(() => appStore.getTitle)
+//const title = computed(() => appStore.getTitle)
 
 const layout = computed(() => appStore.getLayout)
 
@@ -59,13 +59,13 @@ watch(
     :class="[
       prefixCls,
       layout !== 'classic' ? `${prefixCls}__Top` : '',
-      'flex !h-[var(--logo-height)] items-center cursor-pointer pl-8px relative'
+      'flex !h-[var(--logo-height)] items-center cursor-pointer relative'
     ]"
     to="/"
   >
     <img
       src="@/assets/imgs/logo.png"
-      class="w-[calc(var(--logo-height)-10px)] h-[calc(var(--logo-height)-10px)]"
+      class="w-[calc(var(--left-menu-max-width)-10px)] h-[calc(var(--logo-height)-10px)]"
     />
     <div
       v-if="show"
@@ -78,7 +78,6 @@ watch(
         }
       ]"
     >
-      {{ title }}
     </div>
   </router-link>
 </template>

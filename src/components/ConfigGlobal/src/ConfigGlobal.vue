@@ -31,12 +31,13 @@ watch(
   (width: number) => {
     if (width < 768) {
       !appStore.getMobile ? appStore.setMobile(true) : undefined
-      setCssVar('--left-menu-min-width', '0')
+      setCssVar('--left-menu-min-width', '0px')
       appStore.setCollapse(true)
-      appStore.getLayout !== 'classic' ? appStore.setLayout('classic') : undefined
+      //appStore.getLayout !== 'classic' ? appStore.setLayout('topLeft') : undefined
     } else {
       appStore.getMobile ? appStore.setMobile(false) : undefined
-      setCssVar('--left-menu-min-width', '64px')
+      appStore.setCollapse(false)
+      setCssVar('--left-menu-min-width', '0px')
     }
   },
   {

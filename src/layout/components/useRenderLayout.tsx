@@ -107,7 +107,7 @@ export const useRenderLayout = () => {
     return (
       <>
         <div class="flex items-center bg-[var(--top-header-bg-color)] border-bottom-1 border-solid border-[var(--top-tool-border-color)] dark:border-[var(--el-border-color)]">
-          {logo.value ? <Logo class="hover-tigger !pr-15px"></Logo> : undefined}
+          {logo.value ? <Logo class=""></Logo> : undefined}
 
           <ToolHeader class="flex-1"></ToolHeader>
         </div>
@@ -201,7 +201,7 @@ export const useRenderLayout = () => {
     return (
       <>
         <div class="flex items-center bg-[var(--top-header-bg-color)] border-bottom-1 border-solid border-[var(--top-tool-border-color)] dark:border-[var(--el-border-color)]">
-          {logo.value ? <Logo class="hover-tigger !pr-15px"></Logo> : undefined}
+          {logo.value ? <Logo class="hover-tigger"></Logo> : undefined}
 
           <ToolHeader class="flex-1"></ToolHeader>
         </div>
